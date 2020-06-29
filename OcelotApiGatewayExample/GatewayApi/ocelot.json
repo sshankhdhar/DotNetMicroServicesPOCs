@@ -1,0 +1,51 @@
+{
+    "ReRoutes": [
+        {
+            "DownstreamPathTemplate": "/{catchAll}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                    {
+                        "Host": "localhost",
+                        "Port": 7001
+                    }
+                ],
+            "UpstreamPathTemplate": "/catalog-api/{catchAll}",
+            "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+            "AuthenticationOptions": {  
+                "AuthenticationProviderKey": "TestKey",  
+                "AllowedScopes": []  
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/{catchAll}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                    {
+                        "Host": "localhost",
+                        "Port": 7002
+                    }
+                ],
+            "UpstreamPathTemplate": "/orders-api/{catchAll}",
+            "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+            "AuthenticationOptions": {  
+                "AuthenticationProviderKey": "TestKey",  
+                "AllowedScopes": []  
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/{catchAll}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                    {
+                        "Host": "localhost",
+                        "Port": 7003
+                    }
+                ],
+            "UpstreamPathTemplate": "/jwt-api/{catchAll}",
+            "UpstreamHttpMethod": [ "Get", "Put", "Delete" ]
+        }
+    ],
+    "GlobalConfiguration": {
+        "BaseUrl": "https://localhost:7000"
+    }
+}
